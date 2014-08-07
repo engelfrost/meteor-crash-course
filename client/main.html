@@ -1,0 +1,27 @@
+<head>
+</head>
+
+<body>
+  {{> loginButtons}}
+  {{> yield}}
+</body>
+
+<template name="roomShow">
+  {{#each messages}}
+    <div class="message">
+      <img src="{{gravatar}}">
+      <span class="from">{{username}}</span>
+      {{message}}
+    </div>
+  {{/each}}
+  <form>
+    <textarea></textarea><br>
+    <button type="submit">Submit</button>
+  </form>
+</template>
+
+<template name="rooms">
+  {{#each rooms}}
+    <a href="{{pathFor 'roomShow'}}">{{name}}</a><br>
+  {{/each}}
+</template>
